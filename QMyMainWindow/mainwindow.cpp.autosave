@@ -43,7 +43,7 @@ bool MainWindow::maybeSave() {
     QMessageBox box;
     box.setWindowTitle(tr("warning"));
     box.setIcon(QMessageBox::Warning);
-    box.setText(curFile + tr("is not saved, save it?"));
+    box.setText(curFile + tr(" is not saved, save it?"));
     QPushButton *yesBtn = box.addButton(tr("Yes(&Y"),
                                         QMessageBox::YesRole);
     box.addButton(tr("No(&N"),
@@ -85,7 +85,7 @@ bool MainWindow::saveFile(const QString &fileName) {
     return false;
   }
   QTextStream out(&file);
-  //change the statu of mouse to waiting
+  //change the state of mouse to waiting
   QApplication::setOverrideCursor(Qt::WaitCursor);
   out << ui->textEdit->toPlainText();
   //change to orignal mouse
