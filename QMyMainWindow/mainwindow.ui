@@ -93,6 +93,7 @@
    <addaction name="separator"/>
    <addaction name="actionUndo_Z"/>
    <addaction name="separator"/>
+   <addaction name="actionfind_F"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew_File_N">
@@ -187,6 +188,18 @@
   <action name="actionClose_File_C">
    <property name="text">
     <string>Close File(&amp;C)</string>
+   </property>
+  </action>
+  <action name="actionfind_F">
+   <property name="icon">
+    <iconset resource="myresources.qrc">
+     <normaloff>:/myImages/images/icon_requests.png</normaloff>:/myImages/images/icon_requests.png</iconset>
+   </property>
+   <property name="text">
+    <string>find(&amp;F)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
    </property>
   </action>
  </widget>

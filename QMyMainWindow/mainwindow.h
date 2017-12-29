@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QCloseEvent>
+class QLineEdit;
+class QDialog;
 
 namespace Ui {
 class MainWindow;
@@ -47,12 +49,18 @@ private slots:
 
   void on_actionClose_File_C_triggered();
 
+  void showFindText();
+
+  void on_actionfind_F_triggered();
+
 private:
   Ui::MainWindow *ui;
   // whether the file is saved
   bool isUntitled;
   // path of the file
   QString curFile;
+  QLineEdit *findLineEdit;
+  QDialog *findDlg;
 };
 
 #endif // MAINWINDOW_H

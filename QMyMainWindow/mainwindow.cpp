@@ -4,6 +4,8 @@
 #include <QPushButton>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QLineEdit>
+#include <QDialog>
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -25,6 +27,15 @@ MainWindow::MainWindow(QWidget *parent) :
   // add action to menu
   ui->menufile_F->addAction(openAction);
 
+  //find dialog
+  findDlg = new QDialog(this);
+  findDlg->setWindowTitle(tr("find"));
+  findLineEdit = new QLineEdit(findDlg);
+  QPushButton * btn = new QPushButton(tr("find next"), findDlg);
+  QVBoxLayout *layout = new QVBoxLayout(findDlg);
+  layout->addWidget(findLineEdit);
+  layout->addWidget(btn);
+  connect(btn, SIGNAL(clicked()), this, SLOT(showFindText()));
 }
 
 void MainWindow::newFile() {
@@ -43,7 +54,7 @@ bool MainWindow::maybeSave() {
     QMessageBox box;
     box.setWindowTitle(tr("warning"));
     box.setIcon(QMessageBox::Warning);
-    box.setText(curFile + tr("is not saved, save it?"));
+    box.setText(curFile + tr(" is not saved, save it?"));
     QPushButton *yesBtn = box.addButton(tr("Yes(&Y"),
                                         QMessageBox::YesRole);
     box.addButton(tr("No(&N"),
@@ -85,7 +96,7 @@ bool MainWindow::saveFile(const QString &fileName) {
     return false;
   }
   QTextStream out(&file);
-  //change the statu of mouse to waiting
+  //change the state of mouse to waiting
   QApplication::setOverrideCursor(Qt::WaitCursor);
   out << ui->textEdit->toPlainText();
   //change to orignal mouse
@@ -184,6 +195,15 @@ void MainWindow::on_actionClose_File_C_triggered()
   }
 }
 
+void MainWindow::showFindText()
+{
+  QString str = findLineEdit->text();
+  if (!ui->textEdit->find(str, QTextDocument::FindBackward)) {
+    QMessageBox::warning(this, tr("find"),
+                         tr("%1 cannot be found.").arg(str));
+  }
+}
+
 void MainWindow::closeEvent(QCloseEvent *event) {
   if (maybeSave()) {
     event->accept();
@@ -193,3 +213,8 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 }
 
 
+
+void MainWindow::on_actionfind_F_triggered()
+{
+    findDlg->show();
+}
