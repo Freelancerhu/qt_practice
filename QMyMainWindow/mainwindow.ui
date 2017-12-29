@@ -13,7 +13,35 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTextEdit" name="textEdit"/>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
@@ -27,9 +55,29 @@
     <property name="title">
      <string>file(&amp;F)</string>
     </property>
-    <addaction name="actionNew_File_N"/>
+    <addaction name="actionOpen_File_O"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_S"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit_X"/>
+   </widget>
+   <widget class="QMenu" name="menuedit_E">
+    <property name="title">
+     <string>edit(&amp;E)</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionCut_C"/>
+    <addaction name="actionCopy_C"/>
+   </widget>
+   <widget class="QMenu" name="menuHwlp">
+    <property name="title">
+     <string>help(&amp;H)</string>
+    </property>
+    <addaction name="actionabout_A"/>
    </widget>
    <addaction name="menufile_F"/>
+   <addaction name="menuedit_E"/>
+   <addaction name="menuHwlp"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -38,6 +86,10 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionNew_File_N"/>
+   <addaction name="separator"/>
+   <addaction name="actionUndo_Z"/>
+   <addaction name="separator"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew_File_N">
@@ -50,6 +102,69 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen_File_O">
+   <property name="icon">
+    <iconset resource="myresources.qrc">
+     <normaloff>:/myImages/images/hand.png</normaloff>:/myImages/images/hand.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open File(&amp;O)</string>
+   </property>
+  </action>
+  <action name="actionSave_S">
+   <property name="icon">
+    <iconset resource="myresources.qrc">
+     <normaloff>:/myImages/images/icon_mic_off.png</normaloff>:/myImages/images/icon_mic_off.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save(&amp;S)</string>
+   </property>
+  </action>
+  <action name="actionExit_X">
+   <property name="icon">
+    <iconset resource="myresources.qrc">
+     <normaloff>:/myImages/images/icon_mic_disabled.png</normaloff>:/myImages/images/icon_mic_disabled.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit(&amp;X)</string>
+   </property>
+  </action>
+  <action name="actionUndo_Z">
+   <property name="icon">
+    <iconset resource="myresources.qrc">
+     <normaloff>:/myImages/images/clockface.png</normaloff>:/myImages/images/clockface.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo(&amp;Z)</string>
+   </property>
+  </action>
+  <action name="actionCut_C">
+   <property name="icon">
+    <iconset resource="myresources.qrc">
+     <normaloff>:/myImages/images/icon_mic_on.png</normaloff>:/myImages/images/icon_mic_on.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cut(&amp;X)</string>
+   </property>
+  </action>
+  <action name="actionCopy_C">
+   <property name="icon">
+    <iconset resource="myresources.qrc">
+     <normaloff>:/myImages/images/icon_viewers.png</normaloff>:/myImages/images/icon_viewers.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy(&amp;C)</string>
+   </property>
+  </action>
+  <action name="actionabout_A">
+   <property name="icon">
+    <iconset resource="myresources.qrc">
+     <normaloff>:/myImages/images/sharingicon.png</normaloff>:/myImages/images/sharingicon.png</iconset>
+   </property>
+   <property name="text">
+    <string>about(&amp;A)</string>
    </property>
   </action>
  </widget>
