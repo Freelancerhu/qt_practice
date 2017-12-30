@@ -21,6 +21,31 @@ void MainWindow::paintEvent(QPaintEvent *p)
   painter.drawLine(QPointF(0, 0), QPointF(100, 100));
   painter.drawEllipse(rectangle);
 
+  // linear gradient
+  QLinearGradient linearGradient(QPointF(40, 190), QPointF(70, 190));
+  // insert color
+  linearGradient.setColorAt(0, Qt::yellow);
+  linearGradient.setColorAt(0.5, Qt::red);
+  linearGradient.setColorAt(1, Qt::green);
+  linearGradient.setSpread(QGradient::ReflectSpread);
+  painter.setBrush(linearGradient);
+  painter.drawRect(120, 50, 200, 80);
+
+  // radial Gradient
+  QRadialGradient radialGradient(QPointF(250, 500), 50, QPointF(275, 200));
+  radialGradient.setColorAt(0, QColor(255, 255, 100, 150));
+  radialGradient.setColorAt(1, QColor(0, 0, 0, 50));
+  radialGradient.setSpread(QGradient::ReflectSpread);
+  painter.setBrush(radialGradient);
+  painter.drawEllipse(QPointF(250, 500), 150, 100);
+
+  //conical gradient
+  QConicalGradient conicalGradient(QPointF(500, 190), 60);
+  conicalGradient.setColorAt(0.2, Qt::cyan);
+  conicalGradient.setColorAt(0.9, Qt::black);
+  painter.setBrush(conicalGradient);
+  painter.drawEllipse(QPointF(500, 190), 150, 150);
+
   QPen pen;
   // set color of pen
   pen.setColor(QColor(255, 0, 0));
