@@ -104,6 +104,9 @@
    <property name="text">
     <string>New File(&amp;N)</string>
    </property>
+   <property name="statusTip">
+    <string>new file</string>
+   </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
    </property>
@@ -116,6 +119,9 @@
    <property name="text">
     <string>Open File(&amp;O)</string>
    </property>
+   <property name="statusTip">
+    <string>open file</string>
+   </property>
   </action>
   <action name="actionSave_S">
    <property name="icon">
@@ -124,6 +130,9 @@
    </property>
    <property name="text">
     <string>Save(&amp;S)</string>
+   </property>
+   <property name="statusTip">
+    <string>save</string>
    </property>
   </action>
   <action name="actionExit_X">
@@ -134,6 +143,9 @@
    <property name="text">
     <string>Exit(&amp;X)</string>
    </property>
+   <property name="statusTip">
+    <string>exit</string>
+   </property>
   </action>
   <action name="actionUndo_Z">
    <property name="icon">
@@ -142,6 +154,9 @@
    </property>
    <property name="text">
     <string>Undo(&amp;Z)</string>
+   </property>
+   <property name="statusTip">
+    <string>undo</string>
    </property>
   </action>
   <action name="actionCut_C">
@@ -152,6 +167,9 @@
    <property name="text">
     <string>Cut(&amp;X)</string>
    </property>
+   <property name="statusTip">
+    <string>cut</string>
+   </property>
   </action>
   <action name="actionCopy_C">
    <property name="icon">
@@ -160,6 +178,9 @@
    </property>
    <property name="text">
     <string>Copy(&amp;C)</string>
+   </property>
+   <property name="statusTip">
+    <string>copy</string>
    </property>
   </action>
   <action name="actionabout_A">
@@ -170,6 +191,9 @@
    <property name="text">
     <string>about(&amp;A)</string>
    </property>
+   <property name="statusTip">
+    <string>about</string>
+   </property>
   </action>
   <action name="actionSaveAS_A">
    <property name="icon">
@@ -179,15 +203,24 @@
    <property name="text">
     <string>SaveAS(&amp;A)</string>
    </property>
+   <property name="statusTip">
+    <string>save as</string>
+   </property>
   </action>
   <action name="actionPaste_V">
    <property name="text">
     <string>Paste(&amp;V)</string>
    </property>
+   <property name="statusTip">
+    <string>paste</string>
+   </property>
   </action>
   <action name="actionClose_File_C">
    <property name="text">
     <string>Close File(&amp;C)</string>
+   </property>
+   <property name="statusTip">
+    <string>close file</string>
    </property>
   </action>
   <action name="actionfind_F">
@@ -197,6 +230,9 @@
    </property>
    <property name="text">
     <string>find(&amp;F)</string>
+   </property>
+   <property name="statusTip">
+    <string>find</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+F</string>

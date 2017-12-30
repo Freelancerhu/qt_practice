@@ -5,6 +5,7 @@
 #include <QCloseEvent>
 class QLineEdit;
 class QDialog;
+class QLabel;
 
 namespace Ui {
 class MainWindow;
@@ -61,6 +62,7 @@ private:
   QString curFile;
   QLineEdit *findLineEdit;
   QDialog *findDlg;
+  QLabel *statusLabel;
 };
 
 #endif // MAINWINDOW_H

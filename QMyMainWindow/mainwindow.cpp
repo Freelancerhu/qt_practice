@@ -6,6 +6,7 @@
 #include <QTextStream>
 #include <QLineEdit>
 #include <QDialog>
+#include <QLabel>
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -36,6 +37,27 @@ MainWindow::MainWindow(QWidget *parent) :
   layout->addWidget(findLineEdit);
   layout->addWidget(btn);
   connect(btn, SIGNAL(clicked()), this, SLOT(showFindText()));
+
+  //show message
+  //ui->statusBar->showMessage(tr("Shengjie Hu"), 3000);
+  statusLabel = new QLabel(this);
+  // set minimun size of label
+  statusLabel->setMinimumSize(100, 20);
+  // set shape of frame
+  statusLabel->setFrameShape(QFrame::WinPanel);
+  // set shadow
+  statusLabel->setFrameShadow(QFrame::Sunken);
+  statusLabel->setText(tr("Shengjie Hu"));
+  ui->statusBar->addWidget(statusLabel);
+
+
+  //show permanent message
+  QLabel *permanent = new QLabel(this);
+  permanent->setFrameStyle(QFrame::Box | QFrame::Sunken);
+  permanent->setText(tr("https://github.com/Freelancerhu"));
+  permanent->setTextFormat(Qt::RichText);
+  permanent->setOpenExternalLinks(true);
+  ui->statusBar->addPermanentWidget(permanent);
 }
 
 void MainWindow::newFile() {
